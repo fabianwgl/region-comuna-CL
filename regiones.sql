@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-08-2017 a las 17:21:24
+-- Tiempo de generación: 09-08-2017 a las 17:28:02
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.20
 
@@ -442,6 +442,16 @@ ALTER TABLE `region`
 --
 ALTER TABLE `comuna`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `comuna`
+--
+ALTER TABLE `comuna`
+  ADD CONSTRAINT `region_fk` FOREIGN KEY (`idRegion`) REFERENCES `region` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
